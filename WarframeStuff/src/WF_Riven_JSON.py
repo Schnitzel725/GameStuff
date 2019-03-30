@@ -2,11 +2,8 @@ import datetime as dt
 import pandas as pd
 import os
 
-# print (os.getcwd())
-
-path = 'RivenStats_' + dt.datetime.now().strftime('%b-%d-%Y_%H%M%S')
-
 original = os.getcwd()
+path = 'RivenStats_' + dt.datetime.now().strftime('%b-%d-%Y_%H%M%S')
 os.mkdir(path)
 os.chdir(path)
 
