@@ -1,3 +1,5 @@
+# written in python 3 ; might not run on 2.7
+
 import datetime as dt
 import pandas as pd
 import os
