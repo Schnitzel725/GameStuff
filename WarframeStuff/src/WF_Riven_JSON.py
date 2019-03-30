@@ -1,4 +1,14 @@
+import datetime as dt
 import pandas as pd
+import os
+
+# print (os.getcwd())
+
+path = 'RivenStats_' + dt.datetime.now().strftime('%b-%d-%Y_%H%M%S')
+
+original = os.getcwd()
+os.mkdir(path)
+os.chdir(path)
 
 # reads JSON data from websites listed below
 pc = pd.read_json('http://n9e5v4d8.ssl.hwcdn.net/repos/weeklyRivensPC.json', orient='columns')
@@ -16,3 +26,5 @@ def json_convert(df, platform):
 json_convert(pc, 'PC')
 json_convert(xb, 'XBOX')
 json_convert(ps4, 'PS4')
+
+os.chdir(original) # go back to original directory to prevent folder inside of folder inside of folder etc.
