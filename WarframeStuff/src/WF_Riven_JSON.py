@@ -19,7 +19,7 @@ def json_convert(df, platform):
     df = df[['itemType', 'compatibility', 'rerolled', 'pop', 'min', 'max', 'avg', 'stddev']]
     df.columns = ['Item Type', 'For Weapon', 'Rerolled', 'Popularity', 'Lowest Price (Platinum)', 'Highest Price (Platinum)', 'Average Trade Value', 'Average Price Variation']
     file_name = platform + '_json_data.xlsx'
-    df.to_excel(file_name, sheet_name='PC')
+    df.to_excel(file_name, sheet_name=platform)
 
 # calls method and writes to three excel files (PC_json_data.xlsx, XBOX_json_data.xlsx, PS4_json_data.xlsx)
 json_convert(pc, 'PC')
